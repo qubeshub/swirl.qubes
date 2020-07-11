@@ -6,6 +6,6 @@
     -u wrwroxy-0.1 \
     -u swirl-2.4.3 \
     -w headless \
-    -c "xview -fullscreen -onroot \${R_LOGO_PATH}" \
+    -c "xview -fullscreen -onroot @tool/data/swirl_logo.png" \
     -c "wrwroxy --stream-log --logfile /dev/null" \
     -C "rserver --server-working-dir ${HOME} --server-user ${USER} --www-port 8001"
