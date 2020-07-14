@@ -8,5 +8,4 @@
     -w headless \
     -c "xview -fullscreen -onroot @tool/data/swirl_logo.png" \
     -c "wrwroxy --stream-log --logfile /dev/null" \
-    -c "@tool/bin/wrapprun --type swirl --file @@file(#1)" \
     -C "rserver --server-working-dir ${HOME} --server-user ${USER} --www-port 8001"
