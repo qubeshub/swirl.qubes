@@ -1,7 +1,7 @@
 all: wrapprun
 
 install: wrapprun
-		install --mode 0755 -D wrapprun ../bin
+		install --mode 0755 -D wrapprun ../bin/wrapprun
 		
 clean:
 

@@ -116,7 +116,7 @@ arguments = parse_args(opt_parser, positional_arguments = TRUE);
 opt = arguments$options
 app_path = arguments$args
 
-if (length(app_path) == 0) {
+if ((opt$file == "") && (length(app_path) == 0)) {
     stop("No arguments specified - aborting...")
 }
 
@@ -131,6 +131,7 @@ if (opt$type == "") {
             opt$type <- "rmarkdown"
         } else if (ext == "swc") {
             opt$type <- "swirl"
+            opt$file <- app_path
         } else {
             # check for error below
         }
@@ -165,7 +166,7 @@ if (opt$type == "shiny") {
     # launch an RMarkdown site
     launchRMarkdown(app_path,opt$host,opt$port)
 } else if (opt$type == "swirl") {
-    installSwirlCourse(app_path)
+    installSwirlCourse(opt$file)
 } else {
     # raise error if appType is still not populated
     cat("Error while guessing --type flag based on \"",
